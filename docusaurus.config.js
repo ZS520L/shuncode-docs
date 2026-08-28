@@ -1,8 +1,6 @@
 // @ts-check
 import {themes as prismThemes} from 'prism-react-renderer';
 
-const baseUrl = process.env.GITHUB_PAGES_BASE_URL || '/';
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ShunCode',
@@ -14,8 +12,8 @@ const config = {
     faster: false,
   },
 
-  url: 'https://zs520l.github.io',
-  baseUrl,
+  url: 'https://docs.shuncode.top',
+  baseUrl: '/',
 
   organizationName: 'ZS520L',
   projectName: 'shuncode-docs',
@@ -57,7 +55,7 @@ const config = {
           alt: 'ShunCode',
           src: 'img/shuncode.png',
           srcDark: 'img/shuncode.png',
-          href: `${baseUrl}docs/intro`,
+          href: '/docs/intro',
         },
         items: [
           {type: 'doc', docId: 'intro', position: 'left', label: '产品简介'},
