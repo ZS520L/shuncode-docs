@@ -2,7 +2,7 @@
 
 这是 ShunCode 的**公开文档站**，只包含说明文档，**不含产品源码**。
 
-在线阅读：https://zs520l.github.io/shuncode-docs/
+在线阅读：https://docs.shuncode.top/
 
 ```bash
 npm install
