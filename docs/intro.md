@@ -11,6 +11,28 @@ ShunCode **打辅助，不做替代**。ChatGPT Plus、Codex、Arena、你自己
 
 同一份软件里有两条用法，对上号再往下看。
 
+## 先看这个：一键启动全教程
+
+不知道从哪开始，跟着这条走一遍就通了。
+
+<div className="bilibili-embed">
+  <iframe
+    src="https://player.bilibili.com/player.html?isOutside=true&bvid=BV1PUtu6zEGs&p=1"
+    scrolling="no"
+    frameBorder="no"
+    allowFullScreen={true}
+    title="Token 自助餐，ShunCode 一键启动全教程"
+  />
+</div>
+
+[在 Bilibili 打开](https://www.bilibili.com/video/BV1PUtu6zEGs/)
+
+:::tip[分系统的安装教程]
+
+[下载安装](./install.md) 页还有 macOS 4 步配置和 Windows 完整功能演示两条视频。
+
+:::
+
 ## 谁最合适
 
 <div className="card-grid">
@@ -78,7 +100,7 @@ Chat 模式 **不用**登录、也 **不用**买 Bridge 套餐。Bridge 让别�
 
 网页端工具调用会越来越普遍。新出的 Agent 网站只要能跑终端、访问外网，用 [Bridge](./bridge/overview.md) 的同一条 MCP 就能从任意联网浏览器指挥本机项目（工作区），不必换编辑器。目前已知、已经测试过的入口见 [连接网站](./bridge/clients.md)，不是全部。
 
-官方仓库：[https://github.com/ZS520L/shuncode](https://github.com/ZS520L/shuncode) · 当前版本 0.6.9。
+官方仓库：[https://github.com/ZS520L/shuncode](https://github.com/ZS520L/shuncode) · 当前版本 0.7.1。
 
 ## 接下来
 
@@ -86,7 +108,7 @@ Chat 模式 **不用**登录、也 **不用**买 Bridge 套餐。Bridge 让别�
   <a className="ink-card ink-card--compact" href="install">
     <div className="ink-card__kicker">1</div>
     <div className="ink-card__title">下载安装</div>
-    <p className="ink-card__desc">先装上，再选路径。</p>
+    <p className="ink-card__desc">含 macOS / Windows 上手视频。先装上，再选路径。</p>
   </a>
   <a className="ink-card ink-card--compact" href="chat/overview">
     <div className="ink-card__kicker">2 · Chat 模式</div>

@@ -94,6 +94,53 @@ html {
   backdrop-filter: blur(10px);
 }
 
+/**
+ * 移动端抽屉修复：
+ * .navbar 上的 backdrop-filter 会创建包含块，把 position:fixed 的
+ * .navbar-sidebar 裁剪到导航栏高度内，导致点开汉堡菜单一片空白。
+ * 窄屏下改用不产生包含块的实色背景。
+ */
+@media (max-width: 996px) {
+  .navbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: var(--paper);
+  }
+
+  [data-theme='dark'] .navbar {
+    background-color: var(--paper);
+  }
+
+  .navbar-sidebar {
+    background-color: var(--paper);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.18);
+  }
+
+  .navbar-sidebar__brand {
+    background-color: var(--paper);
+    box-shadow: none;
+    border-bottom: 1px solid var(--ifm-toc-border-color);
+  }
+
+  .navbar-sidebar__items {
+    background-color: var(--paper);
+  }
+
+  /* 抽屉里的链接放大一点，手机好点 */
+  .navbar-sidebar .menu__link,
+  .navbar-sidebar .menu__list-item-collapsible {
+    font-size: 1rem;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .navbar-sidebar__back {
+    background: var(--wash);
+    border-radius: 6px;
+    font-weight: 600;
+  }
+}
+
 [data-theme='dark'] .navbar {
   border-bottom-color: rgba(236, 231, 219, 0.12);
 }
