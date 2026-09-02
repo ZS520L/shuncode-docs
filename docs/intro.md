@@ -1,4 +1,4 @@
-﻿---
+---
 sidebar_position: 1
 sidebar_label: 产品简介
 title: 产品简介
@@ -36,25 +36,25 @@ ShunCode **打辅助，不做替代**。ChatGPT Plus、Codex、Arena、你自己
 ## 谁最合适
 
 <div className="card-grid">
-  <a className="ink-card" href="bridge/overview">
+  <a className="ink-card" href="/docs/bridge/overview">
     <div className="ink-card__kicker">Bridge</div>
     <div className="ink-card__title">已经有 Plus，Codex 额度不够用</div>
     <p className="ink-card__desc">用浏览器接到 ChatGPT。不是反代；国内网络仍有封号风险，可买低价质保。</p>
     <div className="ink-card__meta">看 Bridge 模式 →</div>
   </a>
-  <a className="ink-card" href="bridge/clients">
+  <a className="ink-card" href="/docs/bridge/clients">
     <div className="ink-card__kicker">Bridge + Arena</div>
     <div className="ink-card__title">不想买 Plus</div>
     <p className="ink-card__desc">用免费 Arena，同样走 Bridge，换设备也能用。</p>
     <div className="ink-card__meta">连接网站 →</div>
   </a>
-  <a className="ink-card" href="chat/overview">
+  <a className="ink-card" href="/docs/chat/overview">
     <div className="ink-card__kicker">Chat 模式</div>
     <div className="ink-card__title">用惯了 API</div>
     <p className="ink-card__desc">自己填 Key。免费模型很多，交流群里也常有接口福利。</p>
     <div className="ink-card__meta">看 Chat 模式 →</div>
   </a>
-  <a className="ink-card" href="chat/multi-model">
+  <a className="ink-card" href="/docs/chat/multi-model">
     <div className="ink-card__kicker">卖点</div>
     <div className="ink-card__title">重要任务想一次做对</div>
     <p className="ink-card__desc">Chat 模式里的多模型博弈：意见一致再行动。</p>
@@ -71,13 +71,13 @@ ShunCode **打辅助，不做替代**。ChatGPT Plus、Codex、Arena、你自己
 ## 先选路径
 
 <div className="card-grid card-grid--2">
-  <a className="ink-card" href="chat/overview">
+  <a className="ink-card" href="/docs/chat/overview">
     <div className="ink-card__kicker">Chat 模式</div>
     <div className="ink-card__title">在编辑器里自己和模型对话、调用工具</div>
     <p className="ink-card__desc">安装 → 配置模型 → Ask / Plan / Code。不用登录，也不用买 Bridge 套餐。</p>
     <div className="ink-card__meta">走 Chat 模式 →</div>
   </a>
-  <a className="ink-card" href="bridge/overview">
+  <a className="ink-card" href="/docs/bridge/overview">
     <div className="ink-card__kicker">Bridge 模式</div>
     <div className="ink-card__title">用浏览器指挥本机项目（工作区）</div>
     <p className="ink-card__desc">手机、另一台电脑或别的系统都可以。安装 → 登录 → 买套餐 → 启动隧道 → 连接网站。</p>
@@ -105,27 +105,27 @@ Chat 模式 **不用**登录、也 **不用**买 Bridge 套餐。Bridge 让别�
 ## 接下来
 
 <div className="card-grid">
-  <a className="ink-card ink-card--compact" href="install">
+  <a className="ink-card ink-card--compact" href="/docs/install">
     <div className="ink-card__kicker">1</div>
     <div className="ink-card__title">下载安装</div>
     <p className="ink-card__desc">含 macOS / Windows 上手视频。先装上，再选路径。</p>
   </a>
-  <a className="ink-card ink-card--compact" href="chat/overview">
+  <a className="ink-card ink-card--compact" href="/docs/chat/overview">
     <div className="ink-card__kicker">2 · Chat 模式</div>
     <div className="ink-card__title">Chat 模式</div>
     <p className="ink-card__desc">本机对话、调用工具。</p>
   </a>
-  <a className="ink-card ink-card--compact" href="bridge/overview">
+  <a className="ink-card ink-card--compact" href="/docs/bridge/overview">
     <div className="ink-card__kicker">3 · Bridge</div>
     <div className="ink-card__title">Bridge 模式</div>
     <p className="ink-card__desc">任意联网浏览器指挥本机。</p>
   </a>
-  <a className="ink-card ink-card--compact" href="advanced/overview">
+  <a className="ink-card ink-card--compact" href="/docs/advanced/overview">
     <div className="ink-card__kicker">4 · 高级</div>
     <div className="ink-card__title">高级玩法</div>
     <p className="ink-card__desc">MCP、Skills、记忆、思维训练营。</p>
   </a>
-  <a className="ink-card ink-card--compact" href="faq">
+  <a className="ink-card ink-card--compact" href="/docs/faq">
     <div className="ink-card__kicker">5</div>
     <div className="ink-card__title">常见问答</div>
     <p className="ink-card__desc">对不上号再看这里。</p>

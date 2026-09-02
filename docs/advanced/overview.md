@@ -10,25 +10,25 @@ description: MCP、Skills、记忆、思维训练营。核心先抓住，再往�
 会对话只是起点。下面四件事，决定你是「会用对话框」，还是能把 Agent 当成长期生产力。
 
 <div className="card-grid">
-  <a className="ink-card" href="mcp">
+  <a className="ink-card" href="/docs/advanced/mcp">
     <div className="ink-card__kicker">MCP</div>
     <div className="ink-card__title">外接工具，只在 Chat 模式</div>
     <p className="ink-card__desc">Bridge 模式无法调用 Chat 模式配置的 MCP。</p>
     <div className="ink-card__meta">看 MCP →</div>
   </a>
-  <a className="ink-card" href="skills">
+  <a className="ink-card" href="/docs/advanced/skills">
     <div className="ink-card__kicker">Skills</div>
     <div className="ink-card__title">本质是文件夹</div>
     <p className="ink-card__desc">把路径给 AI 就会用。Bridge 也支持，不局限当前工作区。</p>
     <div className="ink-card__meta">看 Skills →</div>
   </a>
-  <a className="ink-card" href="memory">
+  <a className="ink-card" href="/docs/advanced/memory">
     <div className="ink-card__kicker">记忆</div>
     <div className="ink-card__title">项目即记忆</div>
     <p className="ink-card__desc">不追求外置记忆。记忆有损，目的是省 Token。ShunCode 用户 Token 自由，不需要。</p>
     <div className="ink-card__meta">看记忆 →</div>
   </a>
-  <a className="ink-card" href="camp">
+  <a className="ink-card" href="/docs/advanced/camp">
     <div className="ink-card__kicker">思维训练营</div>
     <div className="ink-card__title">提升用 AI 的水平</div>
     <p className="ink-card__desc">未来会有系列视频。成功案例：高校实验室把对话记录一并提交。</p>
