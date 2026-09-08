@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
 sidebar_label: 产品简介
-title: ShunCode 产品简介
+title: 产品简介
 description: 一块钱一天，无限额度，有问题能问到人。ChatGPT Plus、Codex、Arena、自己的 API 都继续用，ShunCode 只负责把本机项目接出去
 ---
 
-# ShunCode 产品简介
+# 产品简介
 
 <div className="intro-hero">
   <div className="intro-hero__kicker">一块钱一天 · 无限额度 · 有问题能问到人</div>
