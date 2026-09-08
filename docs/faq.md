@@ -72,7 +72,7 @@ Quick Tunnel 零配置，但每次启动地址都会变。要固定地址，用 
 
 ### Bridge 能连哪些网站？
 
-目前已知、已经测试过、产品里带了按钮的入口有 ChatGPT、Arena、WorkBuddy、Trae、Qwen、Manus、Shunova，**不是全部**。点按钮在内置浏览器打开，也可以在 **快速打开** 里自己加站点。支持创建自定义插件 / 连接器 / MCP 的按官方方式填；不支持、但支持 Agent、能用终端且能访问外网的，每次新开对话发一条带 MCP 链接的提示词即可。不要把地址发到公开场合。名单和接法见 [连接网站](./bridge/clients.md)。
+目前已知、已经测试过、产品里带了按钮的入口有 ChatGPT、Arena、WorkBuddy、Trae、Qwen、Manus、Browser Use、Z.ai、Agnes AI，**不是全部**。点按钮在内置浏览器打开，也可以在 **快速打开** 里自己加站点。支持创建自定义插件 / 连接器 / MCP 的按官方方式填；不支持、但支持 Agent、能用终端且能访问外网的，每次新开对话发一条带 MCP 链接的提示词即可。不要把地址发到公开场合。名单和接法见 [连接网站](./bridge/clients.md)。
 
 ## 高级玩法
 

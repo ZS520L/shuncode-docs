@@ -51,7 +51,7 @@ macOS 那条讲配置最快，Windows 那条把完整功能过了一遍。系统
 
 从 [GitHub Releases](https://github.com/ZS520L/shuncode) 下载当前稳定版，安装后打开任意工作区。
 
-当前版本：0.7.1。
+当前版本：0.7.2。
 
 ## 装好之后
 

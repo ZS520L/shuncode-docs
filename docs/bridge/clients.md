@@ -17,7 +17,7 @@ ShunCode 在 Bridge 页顶部提供一键打开，站点在 **内置浏览器** 
 
 大模型正在从「对话框」变成「能调工具的 Agent」。能在网页里跑终端、访问外网的站点会越来越多——每多一个，ShunCode 就多一个远程指挥台，本机项目（工作区）不用搬、编辑器不用换。
 
-目前已知、已经测试过的包括 ChatGPT、Arena、WorkBuddy、Trae、Qwen、Manus、Shunova，**不是全部**。官方不支持创建自定义插件 / 连接器 / MCP 的，用提示词也能连。符合条件的新站点同样能接，名单会变长，**接法不用变**：还是这一条 MCP。
+目前已知、已经测试过的包括 ChatGPT、Arena、WorkBuddy、Trae、Qwen、Manus、Browser Use、Z.ai、Agnes AI，**不是全部**。官方不支持创建自定义插件 / 连接器 / MCP 的，用提示词也能连。符合条件的新站点同样能接，名单会变长，**接法不用变**：还是这一条 MCP。
 
 ## 内置入口
 
@@ -52,10 +52,20 @@ ShunCode 在 Bridge 页顶部提供一键打开，站点在 **内置浏览器** 
     <div className="ink-card__title">Manus</div>
     <p className="ink-card__desc">manus.im/app</p>
   </a>
-  <a className="ink-card ink-card--compact" href="https://shunova.cc/" target="_blank" rel="noopener noreferrer">
+  <a className="ink-card ink-card--compact" href="https://cloud.browser-use.com/agents" target="_blank" rel="noopener noreferrer">
     <div className="ink-card__kicker">内置入口</div>
-    <div className="ink-card__title">Shunova</div>
-    <p className="ink-card__desc">shunova.cc</p>
+    <div className="ink-card__title">Browser Use</div>
+    <p className="ink-card__desc">cloud.browser-use.com/agents</p>
+  </a>
+  <a className="ink-card ink-card--compact" href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">
+    <div className="ink-card__kicker">内置入口</div>
+    <div className="ink-card__title">Z.ai</div>
+    <p className="ink-card__desc">chat.z.ai</p>
+  </a>
+  <a className="ink-card ink-card--compact" href="https://app.agnes-ai.com/" target="_blank" rel="noopener noreferrer">
+    <div className="ink-card__kicker">内置入口</div>
+    <div className="ink-card__title">Agnes AI</div>
+    <p className="ink-card__desc">app.agnes-ai.com</p>
   </a>
 </div>
 

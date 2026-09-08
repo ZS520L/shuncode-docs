@@ -70,7 +70,8 @@ Bridge **不是反代官网**。对方支持创建自定义插件 / 连接器 / 
 ## 能做什么
 
 - 本机 MCP + Cloudflare / ngrok 隧道。
-- 内置浏览器一键打开目前已知、已经测试过的入口（ChatGPT、Arena、WorkBuddy、Trae、Qwen、Manus、Shunova），不是全部；也可以自己加网站。名单和接法见 [连接网站](./clients.md)。
+- 内置浏览器一键打开目前已知、已经测试过的入口（ChatGPT、Arena、WorkBuddy、Trae、Qwen、Manus、Browser Use、Z.ai、Agnes AI），不是全部；也可以自己加网站。名单和接法见 [连接网站](./clients.md)。
+- 发给远端 Agent 的系统提示词支持自定义：设置 `shuncode.bridge.customInstructions`，文字会**追加**在内置说明之后，下一次远端连接生效。
 - 地址带随机秘密路径，可重置。
 - `set_todos` / `report_progress` 在本地 UI 显示进度。
 
