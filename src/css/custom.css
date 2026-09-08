@@ -458,6 +458,90 @@ a.ink-card:hover .ink-card__meta {
 }
 
 /* 抽卡判断：示例图 */
+
+/* 首页：QQ 群 */
+.qq-join {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 1.2rem;
+  align-items: center;
+  margin: 0 0 1.8rem;
+  padding: 1.1rem 1.25rem;
+  background: #fbf9f3;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  border-left: 3px solid var(--seal);
+  border-radius: 10px;
+  scroll-margin-top: 80px;
+}
+
+.qq-join__kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--seal);
+  font-weight: 650;
+}
+
+.qq-join__title {
+  font-size: 1.15rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+  margin: 0.3rem 0 0.45rem;
+}
+
+.qq-join__desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 0.6rem;
+}
+
+.qq-join__num {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.qq-join__num strong {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  user-select: all;
+}
+
+.qq-join__hint {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.qq-join__qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(22, 22, 22, 0.1);
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .qq-join {
+    grid-template-columns: 1fr;
+  }
+  .qq-join__qr {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+  .qq-join__hint {
+    display: none;
+  }
+}
+
+[data-theme='dark'] .qq-join {
+  background: #191919;
+  border-color: rgba(236, 231, 219, 0.14);
+  border-left-color: var(--seal);
+}
 .gacha-compare {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

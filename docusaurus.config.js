@@ -63,6 +63,7 @@ const config = {
           {type: 'doc', docId: 'bridge/overview', position: 'left', label: 'Bridge 模式'},
           {type: 'doc', docId: 'advanced/overview', position: 'left', label: '高级玩法'},
           {type: 'doc', docId: 'faq', position: 'left', label: '常见问答'},
+          {to: '/docs/intro#qq', label: 'QQ 群', position: 'right'},
           {
             href: 'https://github.com/ZS520L/shuncode',
             label: 'GitHub',

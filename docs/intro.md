@@ -79,6 +79,19 @@ description: 一块钱一天，无限额度，有问题能问到人。ChatGPT Pl
   </div>
 </div>
 
+<div className="qq-join" id="qq">
+  <div className="qq-join__text">
+    <div className="qq-join__kicker">找到组织</div>
+    <div className="qq-join__title">加 QQ 群，有问题当场问</div>
+    <p className="qq-join__desc">安装卡住、连接失败、想知道哪个网站抽卡最爽、群里常有人分享免费接口——都在这儿。作者和老用户都在，不是只有机器人。</p>
+    <div className="qq-join__num">群号 <strong>244627843</strong></div>
+    <div className="qq-join__hint">QQ 搜群号，或者扫右边的码。</div>
+  </div>
+  <div className="qq-join__qr">
+    <img src="/img/qq-group.jpg" alt="ShunCode QQ 群二维码，群号 244627843" loading="lazy" />
+  </div>
+</div>
+
 同一份软件里有两条用法，对上号再往下看。
 
 ## 先看这个：一键启动全教程
