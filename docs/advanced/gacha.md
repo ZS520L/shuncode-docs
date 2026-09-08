@@ -69,12 +69,22 @@ I'll ...        >   We need to ...   >   Let me ...
 
 > 用 SVG 画一只鹈鹕骑自行车。
 
-弱模型画出来的东西，鹈鹕不像鹈鹕、车不像车，甚至元素飘在半空互不相关；好模型能把喙、身体、车轮、踏板、地面的关系都摆对，还会主动加上动画。
+同一句提示词，两次抽卡的产出放在一起，不用懂代码也能分出高下：
 
-<div className="gacha-sample">
-  <img src="/img/gacha-pelican.svg" alt="鹈鹕骑自行车 SVG 示例" />
-  <div className="gacha-sample__caption">一次抽卡的产出。元素齐全、关系正确、带动画——这是一张好牌。</div>
+<div className="gacha-compare">
+  <div className="gacha-sample gacha-sample--good">
+    <div className="gacha-sample__tag">好牌</div>
+    <img src="/img/gacha-pelican-good.svg" alt="好模型画的鹈鹕骑自行车" />
+    <div className="gacha-sample__caption">鹈鹕坐在车座上、翅膀扶把、双腿踩踏板，喙、围巾、车架、辐条、树和云层次分明，还带反向运动学的蹬腿动画。这是一张<strong>好牌</strong>，可以直接开工。</div>
+  </div>
+  <div className="gacha-sample gacha-sample--weak">
+    <div className="gacha-sample__tag">弱牌</div>
+    <img src="/img/gacha-pelican.svg" alt="弱模型画的鹈鹕骑自行车" />
+    <div className="gacha-sample__caption">鹈鹕飘在半空，车轮散落在地上，两者毫无关系；元素都有，就是<strong>拼不到一起</strong>。会动，但动得很尴尬。这种直接重开。</div>
+  </div>
 </div>
+
+两张图的差距，就是「能列出零件」和「理解零件之间的关系」的差距——放到代码里，就是「能写函数」和「能改一个真实项目」的差距。
 
 ### 用 CSS 复刻一张动漫图
 

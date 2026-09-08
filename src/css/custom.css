@@ -458,6 +458,56 @@ a.ink-card:hover .ink-card__meta {
 }
 
 /* 抽卡判断：示例图 */
+.gacha-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.2rem;
+}
+
+.gacha-compare .gacha-sample {
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.gacha-compare .gacha-sample__caption {
+  flex: 1;
+}
+
+.gacha-sample--good {
+  border-top: 2px solid var(--seal);
+}
+
+.gacha-sample--weak {
+  opacity: 0.92;
+}
+
+.gacha-sample__tag {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 1;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(22, 22, 22, 0.72);
+  color: #f4f0e6;
+}
+
+.gacha-sample--good .gacha-sample__tag {
+  background: var(--seal);
+}
+
+@media (max-width: 720px) {
+  .gacha-compare {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gacha-sample {
   margin: 1rem 0 1.4rem;
   border: 1px solid rgba(22, 22, 22, 0.12);
