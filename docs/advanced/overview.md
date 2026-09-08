@@ -2,12 +2,12 @@
 sidebar_position: 1
 sidebar_label: 概览
 title: 高级玩法
-description: MCP、Skills、记忆、思维训练营。核心先抓住，再往深用
+description: MCP、Skills、记忆、思维训练营、抽卡判断。核心先抓住，再往深用
 ---
 
 # 高级玩法
 
-会对话只是起点。下面四件事，决定你是「会用对话框」，还是能把 Agent 当成长期生产力。
+会对话只是起点。下面五件事，决定你是「会用对话框」，还是能把 Agent 当成长期生产力。
 
 <div className="card-grid">
   <a className="ink-card" href="/docs/advanced/mcp">
@@ -33,6 +33,12 @@ description: MCP、Skills、记忆、思维训练营。核心先抓住，再往�
     <div className="ink-card__title">提升用 AI 的水平</div>
     <p className="ink-card__desc">未来会有系列视频。成功案例：高校实验室把对话记录一并提交。</p>
     <div className="ink-card__meta">看训练营 →</div>
+  </a>
+  <a className="ink-card" href="/docs/advanced/gacha">
+    <div className="ink-card__kicker">抽卡判断</div>
+    <div className="ink-card__title">Arena 每轮随机模型，前几句话定级</div>
+    <p className="ink-card__desc">识图、首连行为、thinking 措辞、画鹈鹕。官方可能降智，排行榜上不会。</p>
+    <div className="ink-card__meta">看抽卡判断 →</div>
   </a>
 </div>
 

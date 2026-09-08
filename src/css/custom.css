@@ -457,6 +457,33 @@ a.ink-card:hover .ink-card__meta {
   box-shadow: none;
 }
 
+/* 抽卡判断：示例图 */
+.gacha-sample {
+  margin: 1rem 0 1.4rem;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fbf9f3;
+}
+
+.gacha-sample img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gacha-sample__caption {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  border-top: 1px dashed rgba(22, 22, 22, 0.18);
+}
+
+[data-theme='dark'] .gacha-sample {
+  background: #191919;
+  border-color: rgba(236, 231, 219, 0.14);
+}
+
 .price-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -195,7 +195,7 @@ ShunCode **打辅助，不做替代**：不卖你另一套编辑器，也不接�
   <a className="ink-card ink-card--compact" href="/docs/advanced/overview">
     <div className="ink-card__kicker">4 · 高级</div>
     <div className="ink-card__title">高级玩法</div>
-    <p className="ink-card__desc">MCP、Skills、记忆、思维训练营。</p>
+    <p className="ink-card__desc">MCP、Skills、记忆、思维训练营、抽卡判断。</p>
   </a>
   <a className="ink-card ink-card--compact" href="/docs/faq">
     <div className="ink-card__kicker">5</div>
