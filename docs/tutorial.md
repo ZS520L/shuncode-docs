@@ -21,7 +21,7 @@ description: 25 张截图跟着点。安装、登录、订阅、选隧道（Quic
 
 安装包两个地方拿：
 
-- [GitHub Releases](https://github.com/ZS520L/shuncode)（见 [下载安装](./install.md)）
+- [GitHub Releases](https://github.com/ZS520L/shuncode)（见 [视频教程](./install.md)）
 - QQ 群文件的「下载」文件夹（群号见 [产品简介](./intro.md#qq)）
 
 ![群文件中的软件下载入口与下载文件夹](/img/tutorial/image1.png)

@@ -15,7 +15,7 @@ description: 按 Chat 模式、Bridge 模式和高级玩法分开的常见问题
 
 独立桌面软件。编辑器是 Code-OSS 载体，Agent 跑在单独的 `agent-host` 进程，模型调用不进 workbench 内核。
 
-安装见 [下载安装](./install.md)。
+安装见 [视频教程](./install.md) 或 [图文教程](./tutorial.md)。
 
 ## Chat 模式
 

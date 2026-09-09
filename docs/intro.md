@@ -112,7 +112,7 @@ description: 一块钱一天，无限额度，有问题能问到人。ChatGPT Pl
 
 :::tip[分系统的安装教程]
 
-[下载安装](./install.md) 页还有 macOS 4 步配置和 Windows 完整功能演示两条视频。
+[视频教程](./install.md) 页还有 macOS 4 步配置和 Windows 完整功能演示两条视频；不想看视频有 [图文教程](./tutorial.md)。
 
 :::
 
@@ -192,8 +192,8 @@ ShunCode **打辅助，不做替代**：不卖你另一套编辑器，也不接�
 <div className="card-grid">
   <a className="ink-card ink-card--compact" href="/docs/install">
     <div className="ink-card__kicker">1</div>
-    <div className="ink-card__title">下载安装</div>
-    <p className="ink-card__desc">含 macOS / Windows 上手视频。先装上，再选路径。</p>
+    <div className="ink-card__title">视频教程</div>
+    <p className="ink-card__desc">macOS / Windows 上手视频，另有图文版。先装上，再选路径。</p>
   </a>
   <a className="ink-card ink-card--compact" href="/docs/chat/overview">
     <div className="ink-card__kicker">2 · Chat 模式</div>

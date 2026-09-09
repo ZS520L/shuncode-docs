@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
-sidebar_label: 下载安装
-title: 下载安装
-description: 安装 ShunCode，然后选择 Chat 模式或 Bridge 模式
+sidebar_label: 视频教程
+title: 视频教程
+description: 跟着视频装好 ShunCode，然后选择 Chat 模式或 Bridge 模式
 ---
 
-# 下载安装
+# 视频教程
 
-Chat 模式和 Bridge 模式用的是同一份软件。先装好，再选一条路径往下看。
+Chat 模式和 Bridge 模式用的是同一份软件。跟着视频装好，再选一条路径往下看。不想看视频，看 [图文教程](./tutorial.md)。
 
 ## 上手视频（先看这个）
 

@@ -18,4 +18,4 @@ description: 为本地 Chat 模式填写模型地址和 API Key
 - 本地 Chat 模式走独立进程 `agent-host`，不进 VS Code 内核。
 - 协议支持 Chat Completions、Responses、Anthropic、Codex。
 
-配好后去 [Ask / Plan / Code](./modes.md) 选模式。还没安装的先看 [下载安装](../install.md)。
+配好后去 [Ask / Plan / Code](./modes.md) 选模式。还没安装的先看 [视频教程](../install.md)。

@@ -29,7 +29,7 @@ Chat 模式是写在编辑器里的本地对话。模型跑在本机 `agent-host
 
 ## 使用顺序
 
-1. [下载安装](../install.md)
+1. [视频教程](../install.md) 或 [图文教程](../tutorial.md) 装好软件
 2. [配置模型](./api-key.md)
 3. 按 [Ask / Plan / Code](./modes.md) 选模式
 4. 重要改动走 [多模型博弈](./multi-model.md)，再切 Code
