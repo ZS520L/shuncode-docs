@@ -47,6 +47,12 @@ macOS 那条讲配置最快，Windows 那条把完整功能过了一遍。系统
 
 :::
 
+:::tip[不想看视频]
+
+[图文教程](./tutorial.md) 用 25 张截图把安装、登录、订阅、选隧道到启动 Bridge 走了一遍，还带 winget 报错处理。
+
+:::
+
 ## 安装
 
 从 [GitHub Releases](https://github.com/ZS520L/shuncode) 下载当前稳定版，安装后打开任意工作区。
