@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1.5
+sidebar_position: 2.5
 sidebar_label: 图文教程
 title: 图文教程：从安装到启动 Bridge
 description: 25 张截图跟着点。安装、登录、订阅、选隧道（Quick Tunnel / Ngrok）、winget 报错处理、高级设置
