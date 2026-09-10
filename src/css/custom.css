@@ -623,6 +623,30 @@ a.ink-card:hover .ink-card__meta {
   border-color: rgba(236, 231, 219, 0.14);
 }
 
+/* 抽卡判断：内嵌动画演示 */
+.gacha-demo-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin: 1.25rem 0 1.4rem;
+  overflow: hidden;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  border-radius: 10px;
+  background: #080d19;
+}
+
+.gacha-demo-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+[data-theme='dark'] .gacha-demo-embed {
+  border-color: rgba(236, 231, 219, 0.14);
+}
+
 .price-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

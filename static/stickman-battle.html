@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火柴人大战 · STICK DUEL</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #080d19;
+  }
+  body {
+    display: grid;
+    place-items: center;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .limb {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .mono {
+    font-family: Consolas, monospace;
+    letter-spacing: 3px;
+  }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1000 680"
+     role="img" aria-labelledby="title description">
+  <title id="title">火柴人大战</title>
+  <desc id="description">
+    青色与粉色火柴人在霓虹竞技场交战，
+    循环展示冲刺、直拳、后仰闪避、反击踢腿与双拳对撞。
+  </desc>
+
+  <defs>
+    <linearGradient id="background" x2="0" y2="1">
+      <stop stop-color="#101a30"/>
+      <stop offset="1" stop-color="#070b15"/>
+    </linearGradient>
+
+    <radialGradient id="ambient">
+      <stop stop-color="#244b76" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#101728" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="floor" x2="0" y2="1">
+      <stop stop-color="#17273e"/>
+      <stop offset="1" stop-color="#090e19"/>
+    </linearGradient>
+
+    <linearGradient id="divider">
+      <stop stop-color="#53edff" stop-opacity="0"/>
+      <stop offset=".3" stop-color="#53edff"/>
+      <stop offset=".7" stop-color="#ff5b98"/>
+      <stop offset="1" stop-color="#ff5b98" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="dots" width="28" height="28"
+             patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#b9d8ff" opacity=".07"/>
+    </pattern>
+
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+
+    <!-- 可复用的撞击星芒 -->
+    <g id="spark" fill="none" stroke-linecap="round">
+      <path d="M-44 0H-20M20 0H44M0-44V-20M0 20V44"
+            stroke="currentColor" stroke-width="4"/>
+      <path d="M-30-30L-14-14M14 14L30 30
+               M30-30L14-14M-14 14L-30 30"
+            stroke="#fff5d7" stroke-width="3"/>
+      <path d="M0-17L5-5L17 0L5 5L0 17L-5 5L-17 0L-5-5Z"
+            fill="#ffffff" stroke="none"/>
+    </g>
+
+    <!-- 地面烟尘 -->
+    <g id="dust" fill="none" stroke="#a0b8cd"
+       stroke-width="3" stroke-linecap="round">
+      <path d="M-40 0Q-44-15-29-13Q-27-31-12-20
+               Q0-35 12-18Q30-24 32-8Q47-8 45 0"/>
+      <path d="M-58 3H-43M42 5H61"/>
+    </g>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="1000" height="680" fill="url(#background)"/>
+  <rect width="1000" height="680" fill="url(#dots)"/>
+  <ellipse cx="500" cy="330" rx="490" ry="280" fill="url(#ambient)"/>
+
+  <!-- 装饰轨道 -->
+  <g fill="none" stroke="#7a9fce" opacity=".07">
+    <circle cx="500" cy="355" r="220"/>
+    <circle cx="500" cy="355" r="240" stroke-dasharray="3 15"/>
+    <path d="M500 155V555M280 355H720"/>
+  </g>
+
+  <!-- 城市剪影 -->
+  <g fill="#111d30">
+    <path d="M0 455V330H40V296H79V368H115V276H157V321H188V455Z"/>
+    <path d="M177 455V357H215V313H260V360H291V455Z"/>
+    <path d="M724 455V335H763V283H807V360H839V309H872V455Z"/>
+    <path d="M861 455V341H906V263H950V324H1000V455Z"/>
+  </g>
+  <g stroke="#365373" stroke-width="3" opacity=".35">
+    <path d="M128 296V307M128 321V332M142 296V307
+             M228 337V348M244 337V348
+             M775 304V315M790 304V315
+             M919 285V296M935 285V296M919 310V321"/>
+  </g>
+
+  <!-- 标题区 -->
+  <text x="52" y="47" fill="#6e86a7" font-size="11" class="mono">
+    VECTOR COMBAT / ARENA 01
+  </text>
+  <text x="50" y="89" fill="#eff6ff" font-size="31"
+        font-weight="900" letter-spacing="5">
+    火柴人大战
+  </text>
+
+  <g transform="translate(827 39)">
+    <rect width="123" height="28" rx="14"
+          fill="#17243a" stroke="#2c415c"/>
+    <circle cx="16" cy="14" r="3" fill="#65f4bf">
+      <animate attributeName="opacity" values="1;.3;1"
+               dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="29" y="18" fill="#b5c8db" font-size="10"
+          class="mono" letter-spacing="1">LIVE LOOP</text>
+  </g>
+
+  <!-- 对战状态栏：能量随招式消耗、恢复 -->
+  <g transform="translate(52 125)">
+    <text fill="#58e8ff" font-size="13" font-weight="700"
+          letter-spacing="2">01 / 疾风</text>
+    <rect y="14" width="350" height="9" rx="4.5" fill="#213147"/>
+    <rect y="14" width="350" height="9" rx="4.5" fill="#58e8ff">
+      <animate attributeName="width"
+        values="350;350;285;300;330;330;280;305;330;245;275;350;350"
+        keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+    </rect>
+    <text y="41" fill="#607c99" font-size="9" class="mono">ENERGY</text>
+  </g>
+
+  <g transform="translate(948 125)">
+    <text text-anchor="end" fill="#ff659b" font-size="13"
+          font-weight="700" letter-spacing="2">霓虹 / 02</text>
+    <g transform="scale(-1 1)">
+      <rect y="14" width="350" height="9" rx="4.5" fill="#213147"/>
+      <rect y="14" width="350" height="9" rx="4.5" fill="#ff659b">
+        <animate attributeName="width"
+          values="350;350;330;310;340;340;270;300;330;245;275;350;350"
+          keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+          dur="8s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <text y="41" text-anchor="end" fill="#607c99"
+          font-size="9" class="mono">ENERGY</text>
+  </g>
+
+  <text x="500" y="151" text-anchor="middle" fill="#f0d7a1"
+        font-size="25" font-style="italic" font-weight="900">VS</text>
+
+  <!-- 竞技场地面 -->
+  <path d="M0 500H1000V680H0Z" fill="url(#floor)"/>
+  <g fill="none" stroke="#31445f" stroke-width="1" opacity=".42">
+    <path d="M500 500L50 680M500 500L270 680M500 500V680
+             M500 500L730 680M500 500L950 680
+             M250 500L0 570M750 500L1000 570"/>
+    <path d="M0 526H1000M0 566H1000M0 625H1000"/>
+  </g>
+  <path d="M0 500H1000" stroke="url(#divider)"
+        stroke-width="3" filter="url(#glow)"/>
+
+  <!-- 地面发光投影 -->
+  <ellipse cx="400" cy="504" rx="92" ry="10"
+           fill="#39c5f3" opacity=".14" filter="url(#soft)">
+    <animate attributeName="cx"
+      values="340;370;410;400;385;410;375;380;390;425;380;340;340"
+      keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+      dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="600" cy="504" rx="92" ry="10"
+           fill="#fc518f" opacity=".14" filter="url(#soft)">
+    <animate attributeName="cx"
+      values="660;630;570;610;620;590;570;610;610;575;620;660;660"
+      keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+      dur="8s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- 青色火柴人 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="340 400;370 400;410 400;400 400;385 400;410 400;
+              375 400;380 400;390 400;425 400;380 400;340 400;340 400"
+      keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+      dur="8s" repeatCount="indefinite"/>
+
+    <!-- 阴影 -->
+    <ellipse cy="104" rx="58" ry="6" fill="#000" opacity=".3"/>
+
+    <!-- 后臂 -->
+    <path class="limb" stroke="#26899f" stroke-width="11"
+          d="M0-60L-30-32L-9-17">
+      <animate attributeName="d"
+        values="
+          M0-60L-30-32L-9-17;
+          M0-60L-36-35L-61-46;
+          M0-60L-33-29L-57-42;
+          M0-60L-28-28L-8-20;
+          M0-60L-25-32L0-42;
+          M0-60L-20-34L8-53;
+          M0-60L-37-43L-20-71;
+          M0-60L-26-36L0-50;
+          M0-60L-41-27L-57-38;
+          M0-60L-31-27L-49-44;
+          M0-60L-26-30L-7-18;
+          M0-60L-30-32L-9-17;
+          M0-60L-30-32L-9-17"
+        keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- 双腿 -->
+    <path class="limb" stroke="#55e5ff" stroke-width="12"
+          d="M0 0L-24 48L-44 96M0 0L32 45L49 96">
+      <animate attributeName="d"
+        values="
+          M0 0L-24 48L-44 96M0 0L32 45L49 96;
+          M0 0L-33 44L-72 96M0 0L34 36L44 96;
+          M0 0L-40 48L-75 96M0 0L30 38L55 96;
+          M0 0L-26 47L-48 96M0 0L30 43L49 96;
+          M0 0L-22 48L-44 96M0 0L33 45L51 96;
+          M0 0L-30 42L-50 96M0 0L34 40L54 96;
+          M0 0L-35 46L-56 96M0 0L26 43L56 96;
+          M0 0L-27 47L-47 96M0 0L29 44L48 96;
+          M0 0L-34 49L-62 96M0 0L35 41L54 96;
+          M0 0L-41 46L-76 96M0 0L27 40L51 96;
+          M0 0L-29 44L-47 96M0 0L30 44L50 96;
+          M0 0L-24 48L-44 96M0 0L32 45L49 96;
+          M0 0L-24 48L-44 96M0 0L32 45L49 96"
+        keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- 躯干、头、前臂整体倾斜 -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="0;8;12;0;-5;4;-22;-8;8;12;-7;0;0"
+        keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+
+      <path class="limb" d="M0-65L0 0"
+            stroke="#55e5ff" stroke-width="13"/>
+      <circle cy="-94" r="24" fill="#0e2132"
+              stroke="#55e5ff" stroke-width="7"/>
+      <path d="M8-99L18-96" stroke="#d9fcff" stroke-width="3"
+            stroke-linecap="round"/>
+
+      <path class="limb" stroke="#8cf2ff" stroke-width="11"
+            d="M0-60L29-42L44-70">
+        <animate attributeName="d"
+          values="
+            M0-60L29-42L44-70;
+            M0-60L25-38L47-59;
+            M0-60L70-87L139-112;
+            M0-60L40-47L56-76;
+            M0-60L25-43L36-76;
+            M0-60L31-48L42-80;
+            M0-60L25-38L43-66;
+            M0-60L30-46L42-76;
+            M0-60L-10-28L-33-52;
+            M0-60L34-69L65-84;
+            M0-60L23-40L37-65;
+            M0-60L29-42L44-70;
+            M0-60L29-42L44-70"
+          keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+          dur="8s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- 头带飘动 -->
+      <path class="limb" stroke="#55e5ff" stroke-width="3"
+            d="M-24-98Q-40-103-49-94">
+        <animate attributeName="d"
+          values="M-24-98Q-40-103-49-94;
+                  M-24-98Q-42-90-53-102;
+                  M-24-98Q-40-103-49-94"
+          dur=".6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- 粉色火柴人：镜像朝左 -->
+  <g>
+    <animateTransform attributeName="transform" type="translate"
+      values="660 400;630 400;570 400;610 400;620 400;590 400;
+              570 400;610 400;610 400;575 400;620 400;660 400;660 400"
+      keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+      dur="8s" repeatCount="indefinite"/>
+
+    <g transform="scale(-1 1)">
+      <ellipse cy="104" rx="58" ry="6" fill="#000" opacity=".3"/>
+
+      <path class="limb" stroke="#a23769" stroke-width="11"
+            d="M0-60L-29-34L-8-18"/>
+
+      <!-- 支撑腿 -->
+      <path class="limb" stroke="#ef528f" stroke-width="12"
+            d="M0 0L-28 46L-48 96">
+        <animate attributeName="d"
+          values="
+            M0 0L-28 46L-48 96;
+            M0 0L-37 45L-66 96;
+            M0 0L-24 43L-46 96;
+            M0 0L-38 45L-57 96;
+            M0 0L-27 46L-48 96;
+            M0 0L-21 43L-34 96;
+            M0 0L-15 46L-24 96;
+            M0 0L-27 44L-48 96;
+            M0 0L-32 46L-59 96;
+            M0 0L-40 43L-73 96;
+            M0 0L-28 46L-49 96;
+            M0 0L-28 46L-48 96;
+            M0 0L-28 46L-48 96"
+          keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+          dur="8s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- 踢击腿 -->
+      <path class="limb" stroke="#ff78ae" stroke-width="12"
+            d="M0 0L29 44L48 96">
+        <animate attributeName="d"
+          values="
+            M0 0L29 44L48 96;
+            M0 0L33 39L47 96;
+            M0 0L35 47L62 96;
+            M0 0L25 43L54 96;
+            M0 0L28 44L48 96;
+            M0 0L57-28L65 22;
+            M0 0L84-26L157-30;
+            M0 0L47-20L56 35;
+            M0 0L32 44L54 96;
+            M0 0L30 39L50 96;
+            M0 0L30 44L49 96;
+            M0 0L29 44L48 96;
+            M0 0L29 44L48 96"
+          keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+          dur="8s" repeatCount="indefinite"/>
+      </path>
+
+      <g>
+        <animateTransform attributeName="transform" type="rotate"
+          values="0;7;-12;-24;-5;-10;-20;-8;8;12;-7;0;0"
+          keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+          dur="8s" repeatCount="indefinite"/>
+
+        <path class="limb" d="M0-65L0 0"
+              stroke="#ff659f" stroke-width="13"/>
+        <circle cy="-94" r="24" fill="#291527"
+                stroke="#ff659f" stroke-width="7"/>
+        <path d="M8-99L18-96" stroke="#ffe3f0" stroke-width="3"
+              stroke-linecap="round"/>
+
+        <path class="limb" stroke="#ff91ba" stroke-width="11"
+              d="M0-60L28-42L42-73">
+          <animate attributeName="d"
+            values="
+              M0-60L28-42L42-73;
+              M0-60L29-40L46-66;
+              M0-60L33-60L28-96;
+              M0-60L25-56L20-91;
+              M0-60L29-43L40-75;
+              M0-60L31-43L44-74;
+              M0-60L28-47L42-80;
+              M0-60L26-42L40-73;
+              M0-60L-8-30L-31-53;
+              M0-60L34-69L65-84;
+              M0-60L23-40L37-65;
+              M0-60L28-42L42-73;
+              M0-60L28-42L42-73"
+            keyTimes="0;.12;.24;.30;.36;.46;.56;.64;.70;.78;.86;.94;1"
+            dur="8s" repeatCount="indefinite"/>
+        </path>
+      </g>
+    </g>
+  </g>
+
+  <!-- 冲刺速度线 -->
+  <g fill="none" stroke="#58e8ff" stroke-width="3"
+     stroke-linecap="round" opacity="0">
+    <path d="M257 370H310M231 395H295M270 422H317"/>
+    <animate attributeName="opacity"
+      values="0;.6;0;0;.6;0;0"
+      keyTimes="0;.18;.27;.69;.75;.81;1"
+      dur="8s" repeatCount="indefinite"/>
+  </g>
+  <g fill="none" stroke="#ff659f" stroke-width="3"
+     stroke-linecap="round" opacity="0">
+    <path d="M690 360H743M710 389H768M690 416H731"/>
+    <animate attributeName="opacity"
+      values="0;.5;0;0;.6;0;0"
+      keyTimes="0;.18;.27;.69;.75;.81;1"
+      dur="8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 直拳轨迹 -->
+  <path d="M447 355Q497 292 571 320"
+        fill="none" stroke="#9af6ff" stroke-width="5"
+        stroke-linecap="round" opacity="0"
+        filter="url(#glow)">
+    <animate attributeName="opacity"
+      values="0;0;.8;0;0"
+      keyTimes="0;.19;.24;.30;1"
+      dur="8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- 防御火花 -->
+  <g transform="translate(557 320)" color="#8cf2ff">
+    <g opacity="0">
+      <use href="#spark"/>
+      <animate attributeName="opacity"
+        values="0;0;1;0;0"
+        keyTimes="0;.225;.24;.30;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale"
+        values=".2;.2;1;1.6;1.6"
+        keyTimes="0;.225;.24;.30;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- 踢击弧光 -->
+  <path d="M540 459Q479 426 415 370"
+        fill="none" stroke="#ff92bc" stroke-width="7"
+        stroke-linecap="round" opacity="0"
+        filter="url(#glow)">
+    <animate attributeName="opacity"
+      values="0;0;.85;0;0"
+      keyTimes="0;.50;.555;.62;1"
+      dur="8s" repeatCount="indefinite"/>
+  </path>
+
+  <g transform="translate(416 370)" color="#ff80ae">
+    <g opacity="0">
+      <use href="#spark"/>
+      <animate attributeName="opacity"
+        values="0;0;1;0;0"
+        keyTimes="0;.54;.56;.63;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale"
+        values=".3;.3;.8;1.5;1.5"
+        keyTimes="0;.54;.56;.63;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- 双拳碰撞：闪光、冲击波、碎光 -->
+  <g transform="translate(500 332)">
+    <g opacity="0">
+      <circle r="23" fill="#fff0cb" opacity=".3" filter="url(#soft)"/>
+      <use href="#spark" color="#ffe3a5" filter="url(#glow)"/>
+      <animate attributeName="opacity"
+        values="0;0;1;0;0"
+        keyTimes="0;.765;.78;.84;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale"
+        values=".2;.2;1.4;2;2"
+        keyTimes="0;.765;.78;.84;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <circle r="10" fill="none" stroke="#ffdfa4"
+            stroke-width="2" opacity="0">
+      <animate attributeName="r"
+        values="10;10;16;145;145"
+        keyTimes="0;.765;.78;.88;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0;0;.85;0;0"
+        keyTimes="0;.765;.78;.88;1"
+        dur="8s" repeatCount="indefinite"/>
+    </circle>
+
+    <g stroke="#ffe4ab" stroke-width="3" opacity="0">
+      <path d="M-40-35L-65-53M40-35L65-53
+               M-43 32L-70 48M43 32L70 48
+               M-4-48L-7-76M4 48L7 76"/>
+      <animate attributeName="opacity"
+        values="0;0;1;0;0"
+        keyTimes="0;.77;.79;.87;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale"
+        values=".5;.5;1;1.8;1.8"
+        keyTimes="0;.77;.79;.87;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- 落地烟尘 -->
+  <g transform="translate(360 495)">
+    <g opacity="0">
+      <use href="#dust"/>
+      <animate attributeName="opacity"
+        values="0;0;.5;0;0"
+        keyTimes="0;.80;.85;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale"
+        values=".5;.5;1;1.7;1.7"
+        keyTimes="0;.80;.85;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <g transform="translate(640 495)">
+    <g opacity="0">
+      <use href="#dust"/>
+      <animate attributeName="opacity"
+        values="0;0;.5;0;0"
+        keyTimes="0;.80;.85;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale"
+        values=".5;.5;1;1.7;1.7"
+        keyTimes="0;.80;.85;.94;1"
+        dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- 招式字幕 -->
+  <g text-anchor="middle" font-weight="900" font-style="italic">
+    <text x="580" y="252" fill="#a7f5ff" font-size="21" opacity="0">
+      BLOCK!
+      <animate attributeName="opacity"
+        values="0;0;1;1;0;0"
+        keyTimes="0;.225;.24;.29;.34;1"
+        dur="8s" repeatCount="indefinite"/>
+    </text>
+    <text x="380" y="271" fill="#ff9bc3" font-size="21" opacity="0">
+      COUNTER!
+      <animate attributeName="opacity"
+        values="0;0;1;1;0;0"
+        keyTimes="0;.54;.56;.61;.67;1"
+        dur="8s" repeatCount="indefinite"/>
+    </text>
+    <text x="500" y="233" fill="#ffe1a3" font-size="37"
+          letter-spacing="6" opacity="0">
+      CLASH!
+      <animate attributeName="opacity"
+        values="0;0;1;1;0;0"
+        keyTimes="0;.765;.78;.84;.90;1"
+        dur="8s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- 底部回合进度 -->
+  <g transform="translate(52 580)">
+    <text fill="#c1d0e2" font-size="12" letter-spacing="3">
+      ROUND 01
+    </text>
+    <text x="896" text-anchor="end" fill="#667f9e"
+          font-size="11" class="mono">8 SEC / INFINITE DUEL</text>
+
+    <rect y="21" width="896" height="3" rx="1.5" fill="#25364c"/>
+    <rect y="21" width="0" height="3" rx="1.5" fill="url(#divider)">
+      <animate attributeName="width" from="0" to="896"
+               dur="8s" repeatCount="indefinite"/>
+    </rect>
+
+    <g fill="#607995" font-size="10" letter-spacing="2">
+      <text y="51">接近</text>
+      <text x="205" y="51">直拳 / 防守</text>
+      <text x="468" y="51">踢击 / 反制</text>
+      <text x="695" y="51">双拳对撞</text>
+      <text x="896" y="51" text-anchor="end">重整</text>
+    </g>
+  </g>
+
+  <!-- 边角取景线 -->
+  <path d="M18 43V18H43M957 18H982V43
+           M18 637V662H43M957 662H982V637"
+        fill="none" stroke="#38506e" stroke-width="2"/>
+</svg>
+</body>
+</html>
