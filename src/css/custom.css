@@ -347,6 +347,39 @@ a.ink-card:hover .ink-card__meta {
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
 }
 
+.intro-recommend { margin: 0 0 1.8rem; padding: 1.4rem; background: var(--ifm-background-surface-color); border: 1px solid var(--wash-strong); border-left: 5px solid var(--seal); border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.intro-recommend__tag { color: var(--seal); font-weight: 750; font-size: .8rem; margin-bottom: .7rem; }
+.intro-recommend h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.35; margin: 0 0 .8rem; }
+.intro-recommend h2 span { color: var(--seal); }
+.intro-recommend__lead { color: var(--ink-soft); line-height: 1.8; margin: 0 0 1rem; }
+.intro-recommend__steps { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.intro-recommend__steps span { background: var(--paper-2); padding: .45rem .65rem; border-radius: 6px; font-size: .78rem; }
+.intro-recommend__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; font-weight: 700; font-size: .86rem; }
+.intro-recommend__actions a { padding: .7rem .9rem; }
+.intro-recommend__actions .intro-recommend__primary { background: #7a2e2e; color: #fff !important; border-radius: 7px; text-decoration: none !important; }
+.intro-recommend__actions .intro-recommend__primary:hover { background: #612323; color: #fff !important; }
+.intro-recommend__actions a:focus-visible { outline: 3px solid var(--seal); outline-offset: 3px; }
+.intro-recommend .intro-recommend__note { margin: 1rem 0 0; color: var(--ink-soft); font-size: .76rem; line-height: 1.8; }
+@media (max-width: 540px) { .intro-recommend { padding: 1rem; } .intro-recommend__actions { align-items: stretch; flex-direction: column; } .intro-recommend__actions a { text-align: center; } }
+
+/* 产品简介：实机界面展示 */
+.intro-showcase { margin: 1.8rem 0 2rem; }
+.intro-showcase__eyebrow { color: var(--seal); font-size: .8rem; font-weight: 750; letter-spacing: .08em; margin-bottom: .6rem; }
+.intro-showcase h2 { margin: 0 0 .8rem; font-size: clamp(1.45rem, 2.5vw, 1.95rem); line-height: 1.4; }
+.intro-showcase__lead { color: var(--ink-soft); line-height: 1.85; font-size: .96rem; }
+.intro-showcase__figure { margin: 1.2rem 0 0; overflow: hidden; border: 1px solid var(--wash-strong); border-radius: 12px; background: var(--paper-2); box-shadow: 0 12px 32px rgba(0, 0, 0, .12); }
+.intro-showcase__figure > a { display: block; position: relative; background: #191919; }
+.intro-showcase__figure > a:focus-visible { outline: 3px solid var(--seal); outline-offset: -3px; }
+.intro-showcase__figure img { display: block; width: 100%; height: auto; }
+.intro-showcase__zoom { display: block; padding: .55rem 1rem; background: #252525; color: #fff; text-align: right; font-size: .78rem; }
+.intro-showcase__figure figcaption { padding: .7rem 1rem; font-size: .78rem; line-height: 1.7; color: var(--ink-soft); }
+.intro-showcase__features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; margin-top: 1.2rem; }
+.intro-showcase__features > div { padding: 1rem 1.1rem; border: 1px solid var(--wash-strong); border-top: 2px solid var(--seal); background: var(--ifm-background-surface-color); border-radius: 9px; }
+.intro-showcase__features strong { font-size: 1.08rem; }
+.intro-showcase__features p { font-size: .88rem; line-height: 1.8; color: var(--ink-soft); margin: .4rem 0 0; }
+.intro-showcase__features a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 540px) { .intro-showcase__features { grid-template-columns: 1fr; } }
+
 /* ---------- 产品简介：开场 + 价格条 ---------- */
 
 .intro-hero {

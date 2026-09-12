@@ -9,6 +9,14 @@ description: 一块钱一天，无限额度，有问题能问到人。ChatGPT Pl
 
 <div className="intro-hero">
   <div className="intro-hero__kicker">一块钱一天 · 无限额度 · 有问题能问到人</div>
+  <section className="intro-recommend" aria-labelledby="intro-recommend-title">
+    <div className="intro-recommend__tag">当前首推 · 不知道选哪个网站，就从这里开始</div>
+    <h2 id="intro-recommend-title">ShunCode <span>＋</span> Arena 筛选助手</h2>
+    <p className="intro-recommend__lead">助手负责筛选候选，ShunCode 负责连接本机项目。<strong>先挑结果，再让 AI 上手干活。</strong></p>
+    <div className="intro-recommend__steps"><span>① 助手收集候选</span><span>② 查看效果、选中对话</span><span>③ 连接 Bridge，继续真实任务</span></div>
+    <div className="intro-recommend__actions"><a className="intro-recommend__primary" href="/docs/advanced/gacha">查看筛选助手与推荐玩法 →</a><a href="/docs/bridge/start">连接本机项目 ↗</a></div>
+    <p className="intro-recommend__note"><strong>团队实测：已确认使用 GPT6，测试期间未遇到额度限制。</strong>这是我们目前首推 ShunCode + Arena 筛选助手的原因。以上为团队实测结果，不代表每次筛选都能命中同一模型，也不构成永久无限额度承诺；后续以 Arena 实际可用情况为准。</p>
+  </section>
   <h2 className="intro-hero__title">网页上免费的 AI，<br />现在能直接改你电脑里的代码了。</h2>
   <p className="intro-hero__lead">
     你是不是也这样：网页里的 AI 明明很聪明，却碰不到你的电脑。代码复制过去、答案粘回来，改三行文件要传两趟；想让它直接上手干活，又得再订一份编辑器、再充一次 API，一个月几十上百块就这么没了。
@@ -17,6 +25,25 @@ description: 一块钱一天，无限额度，有问题能问到人。ChatGPT Pl
     <strong>ShunCode 把这堵墙拆了。</strong>网页端那些免费、无限的额度，现在能直接读写你电脑里的项目、跑终端、改完就跑测试。更狠的是——<strong>再也不用被一台电脑拴住</strong>：以前换台机器就得重装环境、同步代码、再登一遍账号，Windows 装好的东西到 Mac 上全白搭；现在电脑开着放家里，你在公司、在地铁上、在床上，掏出手机打开浏览器，就能接着指挥它干活，Windows、Mac、Linux、iOS、Android 通吃，什么都不用装。一块钱一天，不限次数、不限 Token，遇到问题群里有人答。
   </p>
 </div>
+
+<section className="intro-showcase">
+  <div className="intro-showcase__eyebrow">真实工作界面 · 不止一个聊天窗口</div>
+  <h2>功能做全，界面做好，服务跟上。<br />价格，依然亲民。</h2>
+  <p className="intro-showcase__lead">项目文件、分屏对话、终端执行、任务进度和 Bridge 状态，都在一个工作台里。该有的功能看得见，正在做什么也一目了然——不只是能连上 AI，更要让你用得顺手。</p>
+  <figure className="intro-showcase__figure">
+    <a href="/img/product-showcase.webp" target="_blank" rel="noopener noreferrer" aria-label="打开 ShunCode 实机界面大图">
+      <img src="/img/product-showcase.webp" alt="ShunCode 实机工作界面：左侧项目文件，中间并排的 Arena 对话，下方终端，右侧 Bridge 任务进度、工具调用记录与会话状态" width="1920" height="1040" loading="lazy" />
+      <span className="intro-showcase__zoom">点击查看实机大图 ↗</span>
+    </a>
+    <figcaption>真实使用截图：分屏协作、终端与任务记录同屏展示，过程可追踪，状态看得清。</figcaption>
+  </figure>
+  <div className="intro-showcase__features">
+    <div><strong>功能齐全</strong><p>文件、对话、终端、任务追踪与连接状态，覆盖日常协作流程。</p></div>
+    <div><strong>界面漂亮</strong><p>深色工作台、分屏布局、清晰的状态面板，让复杂任务井井有条。</p></div>
+    <div><strong>服务周到</strong><p>安装、连接、使用遇到问题，<a href="#qq">群里有作者和老用户可问</a>，不用独自摸索。</p></div>
+    <div><strong>价格低廉</strong><p>¥1 试一天，¥15 用一个月，¥99 用一年。<a href="/docs/bridge/license">查看 Bridge 套餐 →</a></p></div>
+  </div>
+</section>
 
 <div className="then-now">
   <div className="then-now__col then-now__col--then">
