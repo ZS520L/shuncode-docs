@@ -356,15 +356,18 @@ a.ink-card:hover .ink-card__meta {
 }
 
 .intro-hero__kicker {
-  display: inline-block;
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  font-weight: 650;
-  color: var(--seal);
-  padding: 0.25rem 0.7rem;
-  border: 1px solid rgba(122, 46, 46, 0.35);
-  border-radius: 999px;
-  margin-bottom: 0.9rem;
+  display: block;
+  font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+  line-height: 1.55;
+  letter-spacing: 0.025em;
+  font-weight: 800;
+  color: #fff;
+  background: #7a2e2e;
+  padding: 1rem 1.25rem;
+  border: 1px solid #7a2e2e;
+  border-radius: 12px;
+  margin-bottom: 1.35rem;
+  box-shadow: 0 6px 18px rgba(122, 46, 46, 0.18);
 }
 
 .intro-hero__title {
